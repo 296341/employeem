@@ -23,7 +23,7 @@ export class AppComponent {
 
   public getEmployees(): void {
     this.employeeService.getEmployees().subscribe(
-      (response: any) => {
+      (response: Employee[]) => {
         this.employees = response;
         console.log(this.employees);
       },
@@ -108,10 +108,9 @@ export class AppComponent {
       this.deleteEmployee = employee;
       button.setAttribute('data-target', '#deleteEmployeeModal');
     }
-    /*container.appendChild(button);
+    container?.appendChild(button);
     button.click();
-  }*/
+   
+  }
 }
 
-
-}
